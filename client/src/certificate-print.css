@@ -1,0 +1,175 @@
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 15mm;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .site-header,
+  .site-footer,
+  .account-sidebar,
+  .account-page-header,
+  .certificate-print,
+  .certificate-eligibility,
+  .eligibility-list,
+  .toast {
+    display: none !important;
+  }
+
+  .account-shell,
+  .account-main {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .account-main > :not(.certificate-grid) {
+    display: none !important;
+  }
+
+  .certificate-grid {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .certificate-document {
+    position: relative !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    max-width: none !important;
+    height: 170mm !important;
+    min-height: 0 !important;
+    max-height: 170mm !important;
+    margin: 0 !important;
+    padding: 14mm 18mm !important;
+    overflow: hidden !important;
+    border: 2px solid #b2cba9 !important;
+    border-radius: 0 !important;
+    background: #fcfcf7 !important;
+    box-shadow: inset 0 0 0 6px #fff9, inset 0 0 0 7px #dfe7da !important;
+    color: #31423a !important;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .certificate-document:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  .certificate-mini-brand {
+    font-size: 14pt !important;
+  }
+
+  .certificate-brand-row {
+    gap: 3mm;
+    margin-bottom: 7mm;
+  }
+
+  .certificate-brand-mark {
+    width: 11mm;
+    height: 11mm;
+  }
+
+  .certificate-brand-name {
+    font-size: 16pt !important;
+  }
+
+  .certificate-document-label {
+    font-size: 9pt !important;
+  }
+
+  .certificate-document .eyebrow {
+    margin-top: 10mm !important;
+    font-size: 10pt !important;
+  }
+
+  .certificate-intro,
+  .certificate-course-intro {
+    font-size: 12pt !important;
+  }
+
+  .certificate-student-name {
+    margin: 3mm 0 4mm !important;
+    font-size: 38pt !important;
+  }
+
+  .certificate-name-rule {
+    width: 34mm;
+  }
+
+  .certificate-document h2 {
+    width: 100%;
+    max-width: 230mm !important;
+    margin: 6mm auto 3mm !important;
+    font-size: 26pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .certificate-recognition {
+    font-size: 10pt !important;
+  }
+
+  .certificate-footer {
+    width: 88%;
+    grid-template-columns: 1fr 25mm 1fr;
+    gap: 8mm;
+    margin-top: 12mm !important;
+    padding-top: 6mm !important;
+  }
+
+  .certificate-detail > span {
+    font-size: 8pt !important;
+  }
+
+  .certificate-detail > strong,
+  .certificate-code > a {
+    font-size: 10pt !important;
+  }
+
+  .certificate-seal {
+    width: 23mm;
+    height: 23mm;
+  }
+
+  .certificate-seal > span {
+    font-size: 5.5pt !important;
+  }
+
+  .certificate-document > small {
+    margin-top: 8mm !important;
+    font-size: 9pt !important;
+  }
+
+  .certificate-print {
+    display: none !important;
+  }
+}

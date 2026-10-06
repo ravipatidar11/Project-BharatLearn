@@ -1,0 +1,15 @@
+{
+  "name": "bharatlearn",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "workspaces": ["client"],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c green,cyan \"python server/run.py\" \"npm run dev --workspace client\"",
+    "dev:client": "npm run dev --workspace client",
+    "dev:server": "python server/run.py",
+    "build": "npm run build --workspace client",
+    "seed": "python server/seed.py"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}

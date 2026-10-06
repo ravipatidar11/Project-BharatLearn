@@ -1,0 +1,208 @@
+.styled-dropdown {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  color: #35483d;
+  font-size: 13px;
+}
+
+.styled-dropdown-trigger {
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #e0e7e0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fff 0%, #fcfdfb 100%);
+  color: #46594d;
+  text-align: left;
+  font-size: inherit;
+  cursor: pointer;
+  transition: border-color .18s, box-shadow .18s, background .18s, color .18s;
+}
+
+.styled-dropdown-trigger:hover {
+  border-color: #b8cdbb;
+  background: #fff;
+  color: #2e704b;
+}
+
+.styled-dropdown-trigger:focus-visible,
+.styled-dropdown-open .styled-dropdown-trigger {
+  outline: none;
+  border-color: #78a982;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(64, 128, 79, .11);
+}
+
+.styled-dropdown-trigger:disabled {
+  opacity: .58;
+  cursor: not-allowed;
+}
+
+.styled-dropdown-value {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.styled-dropdown-leading {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: #6b8975;
+}
+
+.styled-dropdown-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.styled-dropdown-chevron {
+  flex: 0 0 auto;
+  color: #7a8b7e;
+  transition: transform .18s, color .18s;
+}
+
+.styled-dropdown-open .styled-dropdown-chevron {
+  transform: rotate(180deg);
+  color: #34734d;
+}
+
+.styled-dropdown-menu {
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + 6px);
+  left: 0;
+  width: max(100%, 210px);
+  max-width: min(300px, calc(100vw - 32px));
+  max-height: min(320px, 45vh);
+  overflow: auto;
+  padding: 6px;
+  border: 1px solid #dfe7de;
+  border-radius: 12px;
+  background: #fffefa;
+  box-shadow: 0 16px 34px rgba(29, 53, 38, .16), 0 3px 8px rgba(29, 53, 38, .05);
+  animation: dropdown-appear .14s ease-out;
+  overscroll-behavior: contain;
+}
+
+.styled-dropdown-menu.align-right {
+  right: 0;
+  left: auto;
+}
+
+.styled-dropdown-menu.opens-above {
+  top: auto;
+  bottom: calc(100% + 6px);
+}
+
+@keyframes dropdown-appear {
+  from { opacity: 0; transform: translateY(-4px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.styled-dropdown-option {
+  width: 100%;
+  min-height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #53635a;
+  text-align: left;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: background .14s, color .14s;
+}
+
+.styled-dropdown-option:hover,
+.styled-dropdown-option.is-active {
+  background: #f0f5ef;
+  color: #286c48;
+}
+
+.styled-dropdown-option.is-selected {
+  background: #e8f2e8;
+  color: #286b47;
+  font-weight: 700;
+}
+
+.styled-dropdown-option.is-selected svg {
+  flex: 0 0 auto;
+  color: #3d8758;
+}
+
+.styled-dropdown-option:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.catalog-filter-panel .filter-select {
+  height: auto;
+  min-width: 0;
+  gap: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.catalog-filter-panel .filter-select .styled-dropdown-trigger {
+  min-height: 46px;
+  padding: 0 11px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, .88);
+}
+
+.catalog-filter-panel .filter-select .styled-dropdown-trigger:focus-visible,
+.catalog-filter-panel .filter-select .styled-dropdown-open .styled-dropdown-trigger {
+  border-color: #8fb99a;
+  box-shadow: 0 0 0 3px rgba(77, 140, 93, .1);
+}
+
+.catalog-filter-panel .filter-select .styled-dropdown-menu {
+  font-size: 12px;
+}
+
+.catalog-filter-panel .styled-dropdown-leading svg {
+  width: 15px;
+  height: 15px;
+}
+
+@media (max-width: 680px) {
+  .styled-dropdown-trigger {
+    min-height: 40px;
+    padding: 0 10px;
+    border-radius: 9px;
+    font-size: 11px;
+  }
+
+  .catalog-filter-panel .filter-select .styled-dropdown-trigger {
+    min-height: 42px;
+    padding: 0 9px;
+    border-radius: 9px;
+  }
+
+  .styled-dropdown-menu {
+    width: max(100%, 180px);
+  }
+
+  .styled-dropdown-option {
+    min-height: 35px;
+    font-size: 11.5px;
+  }
+}

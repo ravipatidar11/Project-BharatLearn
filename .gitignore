@@ -1,0 +1,12 @@
+node_modules/
+.venv/
+.tmp/
+__pycache__/
+*.py[cod]
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+coverage/
+*.log

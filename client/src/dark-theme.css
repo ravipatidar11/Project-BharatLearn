@@ -20,6 +20,8 @@ input::placeholder,textarea::placeholder{color:#89948d}
 select option{background:#f8f7f2;color:#303c35}
 .site-header{background:rgba(248,247,242,.96);border-bottom-color:#deded5}
 .brand,.nav-link,.header-login,.header-dashboard{color:#45534b}
+.header-admin-link{background:#e5eee6;border-color:#cfddcf;color:#286b48}
+.header-admin-link:hover{background:#dce9de;border-color:#bad0bd;color:#1e5938}
 .nav-link:hover,.nav-active,.header-login:hover,.header-dashboard:hover{color:#1e3a2b}
 .nav-dropdown-menu,.header-search-panel,.profile-popover,.search-suggestions{background:#f8f7f2;border-color:#deded5;color:#303c35}
 .nav-dropdown-menu a,.profile-popover>a,.profile-popover>button,.search-suggestions>a{color:#536158}
@@ -194,6 +196,8 @@ select option{background:#f8f7f2;color:#303c35}
 :root[data-theme="dark"] .nav-link,
 :root[data-theme="dark"] .header-login,
 :root[data-theme="dark"] .header-dashboard{color:#d5ded6}
+:root[data-theme="dark"] .header-admin-link{background:#35443a;border-color:#4d6653;color:#b9dfc0}
+:root[data-theme="dark"] .header-admin-link:hover{background:#3e5143;border-color:#64836b;color:#d0ebd4}
 :root[data-theme="dark"] .nav-link:hover,
 :root[data-theme="dark"] .nav-active,
 :root[data-theme="dark"] .header-login:hover,

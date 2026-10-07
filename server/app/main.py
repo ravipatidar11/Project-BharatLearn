@@ -706,7 +706,8 @@ def admin_overview(_admin=Depends(require_admin)):
 
 @app.get("/api/admin/students")
 def admin_students(search: str = "", _admin=Depends(require_admin)):
-    return {"students":query("""SELECT u.id,u.full_name,u.email,u.city,u.college,u.created_at,count(DISTINCT e.id)::int AS enrollments,count(DISTINCT a.id)::int AS tests_taken FROM users u LEFT JOIN enrollments e ON e.user_id=u.id LEFT JOIN test_attempts a ON a.user_id=u.id WHERE u.role='student' AND ($1='' OR u.full_name ILIKE '%'||$1||'%' OR u.email ILIKE '%'||$1||'%') GROUP BY u.id ORDER BY u.created_at DESC LIMIT 100""",[search.strip()])}
+    term=search.strip()
+    return {"students":query("""SELECT u.id,u.full_name,u.email,u.city,u.college,u.created_at,count(DISTINCT e.id)::int AS enrollments,count(DISTINCT a.id)::int AS tests_taken FROM users u LEFT JOIN enrollments e ON e.user_id=u.id LEFT JOIN test_attempts a ON a.user_id=u.id WHERE u.role='student' AND ($1='' OR u.full_name ILIKE $2 OR u.email ILIKE $2) GROUP BY u.id ORDER BY u.created_at DESC LIMIT 100""",[term,f"%{term}%"])}
 
 
 @app.get("/api/admin/students/{student_id}")

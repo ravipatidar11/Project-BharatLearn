@@ -19,8 +19,14 @@ function Protected({ children, admin = false }) {
 function GuestOnly({ children }) {
   const { user, ready } = useAuth();
   if (!ready) return <div className="app-loading"><span className="spinner"/><span>Preparing your learning space...</span></div>;
-  if (user) return <Navigate to="/dashboard" replace />;
+  if (user) return <Navigate to={user.role === 'admin' ? '/admin' : '/dashboard'} replace />;
   return children;
+}
+function AdminLoginPage() {
+  const { user, ready } = useAuth();
+  if (!ready) return <div className="app-loading"><span className="spinner"/><span>Preparing your learning space...</span></div>;
+  if (user?.role === 'admin') return <Navigate to="/admin" replace />;
+  return <Shell footer={false}><AuthPage mode="login" adminMode/></Shell>;
 }
 function NotFound(){return <div className="not-found"><span className="eyebrow">404 · LOST YOUR WAY?</span><h1>Every good path<br/>has a <em>new beginning.</em></h1><p>That page isn't here. Let's find the next useful step.</p><a className="button button-dark" href="/">Return home <span>→</span></a></div>;}
 function SeoManager(){const {pathname}=useLocation();useEffect(()=>{const titles={'/':'BharatLearn — Learn Today. Build India’s Tomorrow.','/courses':'Courses for your next skill — BharatLearn','/tests':'Practice tests — BharatLearn','/about':'About BharatLearn','/contact':'Connect with BharatLearn','/pricing':'Plans & pricing — BharatLearn','/verify':'Verify a BharatLearn certificate','/faq':'Help centre — BharatLearn','/admin-login':'Admin sign in — BharatLearn'};const pageTitle=titles[pathname]||(pathname.startsWith('/courses/')?'Course details — BharatLearn':pathname.startsWith('/tests/')?'Practice test — BharatLearn':pathname==='/admin'?'Admin studio — BharatLearn':'BharatLearn — Learn Today. Build India’s Tomorrow.');document.title=pageTitle;const description=document.querySelector('meta[name="description"]');if(description)description.content='Build your future with practical, career-ready learning made for India.';},[pathname]);return null;}
@@ -34,7 +40,7 @@ export default function App(){return <><Suspense fallback={<div className="app-l
   <Route path="/tests/take/:id" element={<Protected><TestAttemptPage/></Protected>}/>
   <Route path="/tests/result/:attemptId" element={<Protected><Shell><TestResultPage/></Shell></Protected>}/>
   <Route path="/login" element={<GuestOnly><Shell footer={false}><AuthPage mode="login"/></Shell></GuestOnly>}/>
-  <Route path="/admin-login" element={<Shell footer={false}><AuthPage mode="login" adminMode/></Shell>}/>
+  <Route path="/admin-login" element={<AdminLoginPage/>}/>
   <Route path="/signup" element={<GuestOnly><Shell footer={false}><AuthPage mode="signup"/></Shell></GuestOnly>}/>
   <Route path="/forgot-password" element={<Shell footer={false}><ForgotPasswordPage/></Shell>}/>
   <Route path="/about" element={<Shell><AboutPage/></Shell>}/>

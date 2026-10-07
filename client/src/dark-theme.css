@@ -515,3 +515,950 @@ select option{background:#f8f7f2;color:#303c35}
 :root[data-theme="dark"] .pricing-card p{color:#b2beb4}
 :root[data-theme="dark"] .toast{background:#394b3b;color:#d6e7d6;border-color:#536b55}
 :root[data-theme="dark"] .site-footer .brand-mark{background:#4e805d!important}
+
+/* Premium navy, emerald and cyan dark theme. */
+:root[data-theme="dark"]{
+  --ink:#f3f7f5;
+  --muted:#9aa9a8;
+  --orange:#f2994a;
+  --orange-dark:#df8436;
+  --green:#39e58c;
+  --navy:#0d1720;
+  --line:#1b3038;
+  --soft:#081118;
+  --white:#0d1720;
+  --shadow:0 10px 30px rgba(0,0,0,.25);
+  color:#f3f7f5;
+  background:#050a0f;
+}
+:root[data-theme="dark"] body{
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(57,229,140,.045),transparent 42%),
+    #050a0f;
+  color:#f3f7f5;
+}
+:root[data-theme="dark"] ::selection{background:rgba(57,229,140,.28);color:#f3f7f5}
+:root[data-theme="dark"] :focus-visible{outline-color:rgba(57,229,140,.58)}
+:root[data-theme="dark"] .site-header{
+  background:rgba(10,17,24,.94);
+  border-bottom-color:#1b3038;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+:root[data-theme="dark"] .brand{color:#f3f7f5}
+:root[data-theme="dark"] .brand-mark{
+  color:#03100b;
+  background:#39e58c;
+  box-shadow:0 0 18px rgba(57,229,140,.15);
+}
+:root[data-theme="dark"] .brand>span:last-child>span,
+:root[data-theme="dark"] .brand-small>span:last-child>span{color:#63f5a7}
+:root[data-theme="dark"] .nav-link,
+:root[data-theme="dark"] .header-login,
+:root[data-theme="dark"] .header-dashboard{color:#9aa9a8}
+:root[data-theme="dark"] .nav-link:hover,
+:root[data-theme="dark"] .nav-active,
+:root[data-theme="dark"] .header-login:hover,
+:root[data-theme="dark"] .header-dashboard:hover{color:#f3f7f5}
+:root[data-theme="dark"] .nav-active{
+  background:rgba(57,229,140,.09);
+  color:#63f5a7;
+}
+:root[data-theme="dark"] .nav-active:after{background:#39e58c;box-shadow:0 0 10px rgba(57,229,140,.28)}
+:root[data-theme="dark"] .header-admin-link{
+  background:#0d1720;
+  border-color:#1b3038;
+  color:#63f5a7;
+}
+:root[data-theme="dark"] .header-admin-link:hover{background:#111f29;border-color:rgba(57,229,140,.35);color:#63f5a7}
+:root[data-theme="dark"] .main-nav,
+:root[data-theme="dark"] .nav-dropdown-menu,
+:root[data-theme="dark"] .header-search-panel,
+:root[data-theme="dark"] .profile-popover,
+:root[data-theme="dark"] .search-suggestions{background:#0d1720;border-color:#1b3038;color:#f3f7f5}
+:root[data-theme="dark"] .nav-dropdown-menu a,
+:root[data-theme="dark"] .profile-popover>a,
+:root[data-theme="dark"] .profile-popover>button,
+:root[data-theme="dark"] .search-suggestions>a{color:#9aa9a8}
+:root[data-theme="dark"] .nav-dropdown-menu a:hover,
+:root[data-theme="dark"] .profile-popover>a:hover,
+:root[data-theme="dark"] .profile-popover>button:hover,
+:root[data-theme="dark"] .search-suggestions>a:hover{background:#111f29;color:#63f5a7}
+:root[data-theme="dark"] .icon-button,
+:root[data-theme="dark"] .theme-toggle{color:#9aa9a8}
+:root[data-theme="dark"] .icon-button:hover,
+:root[data-theme="dark"] .theme-toggle:hover{background:#111f29;color:#63f5a7}
+:root[data-theme="dark"] .theme-toggle-row{color:#9aa9a8}
+:root[data-theme="dark"] .theme-toggle-row .theme-toggle{background:#081118;border-color:#1b3038}
+:root[data-theme="dark"] .button-orange{
+  background:linear-gradient(135deg,#39e58c,#22d3ee);
+  color:#03100b;
+  box-shadow:0 8px 30px rgba(57,229,140,.14);
+}
+:root[data-theme="dark"] .button-orange:hover{
+  background:linear-gradient(135deg,#63f5a7,#48def3);
+  box-shadow:0 8px 30px rgba(57,229,140,.2);
+}
+:root[data-theme="dark"] .button-dark{background:#0d1720;color:#f3f7f5;border:1px solid #263c43}
+:root[data-theme="dark"] .button-dark:hover{background:#111f29;border-color:rgba(57,229,140,.35);color:#63f5a7}
+:root[data-theme="dark"] .button-light{background:#111f29;color:#f3f7f5}
+:root[data-theme="dark"] .button-light:hover{background:#172833;color:#63f5a7}
+:root[data-theme="dark"] .button-outline{background:transparent;color:#afc0bd;border-color:#263c43}
+:root[data-theme="dark"] .button-outline:hover{background:#0d1720;border-color:#39e58c;color:#63f5a7}
+:root[data-theme="dark"] .hero-section{
+  background:
+    radial-gradient(ellipse at 77% 42%,rgba(34,211,238,.075),transparent 32%),
+    radial-gradient(ellipse at 68% 80%,rgba(57,229,140,.09),transparent 38%),
+    linear-gradient(125deg,#050a0f,#081118 68%,#050a0f);
+  color:#f3f7f5;
+}
+:root[data-theme="dark"] .hero-grid-pattern{opacity:.12}
+:root[data-theme="dark"] .hero-copy h1,
+:root[data-theme="dark"] .hero-copy h1 span,
+:root[data-theme="dark"] .hero-copy>p,
+:root[data-theme="dark"] .hero-kicker,
+:root[data-theme="dark"] .hero-trust small{color:#f3f7f5}
+:root[data-theme="dark"] .hero-copy h1 span{color:#63f5a7}
+:root[data-theme="dark"] .hero-copy>p,
+:root[data-theme="dark"] .hero-kicker,
+:root[data-theme="dark"] .hero-trust small{color:#9aa9a8}
+:root[data-theme="dark"] .hero-visual-bg{
+  --orbit-colors:conic-gradient(from 0deg,#39e58c 0deg,#22d3ee 95deg,#0d1720 190deg,#39e58c 285deg,#39e58c 360deg);
+  --orbit-glint:conic-gradient(from 0deg,transparent 0deg 332deg,rgba(99,245,167,.8) 345deg,transparent 357deg);
+  filter:drop-shadow(0 0 34px rgba(57,229,140,.1));
+}
+:root[data-theme="dark"] .hero-visual-caption{color:#9aa9a8}
+:root[data-theme="dark"] .home-search-section,
+:root[data-theme="dark"] .section-soft,
+:root[data-theme="dark"] .home-faq-section,
+:root[data-theme="dark"] .pricing-section,
+:root[data-theme="dark"] .faq-page,
+:root[data-theme="dark"] .contact-section,
+:root[data-theme="dark"] .legal-section,
+:root[data-theme="dark"] .verify-section,
+:root[data-theme="dark"] .catalog-section,
+:root[data-theme="dark"] .test-list-section,
+:root[data-theme="dark"] .auth-page,
+:root[data-theme="dark"] .auth-form-side,
+:root[data-theme="dark"] .simple-form-page,
+:root[data-theme="dark"] .learning-player-page,
+:root[data-theme="dark"] .quiz-page,
+:root[data-theme="dark"] .exam-page{background:#081118}
+:root[data-theme="dark"] .page-intro{
+  background:linear-gradient(180deg,#081118,#050a0f);
+  border-color:#1b3038;
+}
+:root[data-theme="dark"] .page-intro h1,
+:root[data-theme="dark"] .section-heading h2,
+:root[data-theme="dark"] .home-faq h2,
+:root[data-theme="dark"] .page-intro p{color:#f3f7f5}
+:root[data-theme="dark"] .section-heading p,
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] .catalog-result-line,
+:root[data-theme="dark"] .search-hint{color:#9aa9a8}
+:root[data-theme="dark"] .stat-strip,
+:root[data-theme="dark"] .home-search,
+:root[data-theme="dark"] .catalog-search,
+:root[data-theme="dark"] .filter-select,
+:root[data-theme="dark"] .filter-chip,
+:root[data-theme="dark"] .test-category-tabs button,
+:root[data-theme="dark"] .answer-option,
+:root[data-theme="dark"] .question-palette button{
+  background:#081118;
+  border-color:#1b3038;
+  color:#9aa9a8;
+}
+:root[data-theme="dark"] .stat-strip{color:#f3f7f5}
+:root[data-theme="dark"] .hero-stat strong,
+:root[data-theme="dark"] .hero-stat span,
+:root[data-theme="dark"] .stat-strip-label{color:#d5e0dc}
+:root[data-theme="dark"] .filter-chip:hover,
+:root[data-theme="dark"] .filter-chip.selected,
+:root[data-theme="dark"] .test-category-tabs button.active,
+:root[data-theme="dark"] .answer-option:hover,
+:root[data-theme="dark"] .answer-option.answer-selected{
+  background:rgba(57,229,140,.1);
+  border-color:rgba(57,229,140,.35);
+  color:#63f5a7;
+}
+:root[data-theme="dark"] .category-tile,
+:root[data-theme="dark"] .testimonial-card,
+:root[data-theme="dark"] .home-plan-mini,
+:root[data-theme="dark"] .home-instructor-strip article,
+:root[data-theme="dark"] .course-card,
+:root[data-theme="dark"] .test-card,
+:root[data-theme="dark"] .test-field-card,
+:root[data-theme="dark"] .instructor-card,
+:root[data-theme="dark"] .pricing-card,
+:root[data-theme="dark"] .verify-card,
+:root[data-theme="dark"] .verify-result,
+:root[data-theme="dark"] .contact-form-card,
+:root[data-theme="dark"] .simple-form-card,
+:root[data-theme="dark"] .checkout-modal,
+:root[data-theme="dark"] .detail-panel,
+:root[data-theme="dark"] .enroll-card,
+:root[data-theme="dark"] .instructions-main,
+:root[data-theme="dark"] .instruction-aside,
+:root[data-theme="dark"] .question-card,
+:root[data-theme="dark"] .question-navigator,
+:root[data-theme="dark"] .result-chart-card,
+:root[data-theme="dark"] .answer-review-card,
+:root[data-theme="dark"] .faq-list,
+:root[data-theme="dark"] .legal-content,
+:root[data-theme="dark"] .review-form,
+:root[data-theme="dark"] .empty-state,
+:root[data-theme="dark"] .profile-form-card,
+:root[data-theme="dark"] .dashboard-chart-card,
+:root[data-theme="dark"] .dashboard-side-card,
+:root[data-theme="dark"] .continue-card,
+:root[data-theme="dark"] .history-table-wrap,
+:root[data-theme="dark"] .notification-row,
+:root[data-theme="dark"] .password-hint-card,
+:root[data-theme="dark"] .certificate-eligibility,
+:root[data-theme="dark"] .quiz-question,
+:root[data-theme="dark"] .quiz-result-card,
+:root[data-theme="dark"] .stat-card,
+:root[data-theme="dark"] .admin-chart-panel,
+:root[data-theme="dark"] .admin-activity-panel,
+:root[data-theme="dark"] .admin-stat,
+:root[data-theme="dark"] .admin-shortcut-grid>button,
+:root[data-theme="dark"] .admin-table-wrap,
+:root[data-theme="dark"] .question-bank-panel,
+:root[data-theme="dark"] .review-admin-card,
+:root[data-theme="dark"] .category-admin-grid>article,
+:root[data-theme="dark"] .admin-test-card,
+:root[data-theme="dark"] .curriculum-manager,
+:root[data-theme="dark"] .curriculum-admin-module,
+:root[data-theme="dark"] .curriculum-lesson-form form,
+:root[data-theme="dark"] .admin-modal,
+:root[data-theme="dark"] .admin-modal-form,
+:root[data-theme="dark"] .admin-modal-content,
+:root[data-theme="dark"] .mission-light,
+:root[data-theme="dark"] .philosophy-grid>div{
+  background:#0d1720;
+  border-color:#1b3038;
+  color:#f3f7f5;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+:root[data-theme="dark"] .category-tile:hover,
+:root[data-theme="dark"] .course-card:hover,
+:root[data-theme="dark"] .test-card:hover,
+:root[data-theme="dark"] .instructor-card:hover,
+:root[data-theme="dark"] .home-plan-mini:hover,
+:root[data-theme="dark"] .home-instructor-strip article:hover,
+:root[data-theme="dark"] .admin-shortcut-grid>button:hover{
+  background:#111f29;
+  border-color:rgba(57,229,140,.35);
+  transform:translateY(-2px);
+}
+:root[data-theme="dark"] .category-tile strong,
+:root[data-theme="dark"] .section-heading h2,
+:root[data-theme="dark"] .course-card-title,
+:root[data-theme="dark"] .test-card h3,
+:root[data-theme="dark"] .test-field-heading strong,
+:root[data-theme="dark"] .instructor-card strong,
+:root[data-theme="dark"] .detail-copy h1,
+:root[data-theme="dark"] .detail-panel h2,
+:root[data-theme="dark"] .instructions-main h1,
+:root[data-theme="dark"] .question-card h1,
+:root[data-theme="dark"] .question-nav-heading h3,
+:root[data-theme="dark"] .verify-card h2,
+:root[data-theme="dark"] .contact-form-card h2,
+:root[data-theme="dark"] .simple-form-card h1,
+:root[data-theme="dark"] .pricing-card h2,
+:root[data-theme="dark"] .legal-content h2,
+:root[data-theme="dark"] .faq-layout h2,
+:root[data-theme="dark"] .account-page-header h1,
+:root[data-theme="dark"] .dashboard-topline h1,
+:root[data-theme="dark"] .dashboard-section-head h2,
+:root[data-theme="dark"] .account-main h2,
+:root[data-theme="dark"] .account-main h3,
+:root[data-theme="dark"] .admin-page-title h1,
+:root[data-theme="dark"] .admin-panel-heading h2,
+:root[data-theme="dark"] .admin-stat strong,
+:root[data-theme="dark"] .admin-shortcut-grid strong,
+:root[data-theme="dark"] .admin-table td,
+:root[data-theme="dark"] .question-bank-head h2,
+:root[data-theme="dark"] .testimonial-card strong,
+:root[data-theme="dark"] .home-plan-mini strong,
+:root[data-theme="dark"] .home-faq-list summary{color:#f3f7f5}
+:root[data-theme="dark"] .category-tile>span:last-child,
+:root[data-theme="dark"] .section-heading p,
+:root[data-theme="dark"] .course-card-body p,
+:root[data-theme="dark"] .test-card p,
+:root[data-theme="dark"] .test-field-heading small,
+:root[data-theme="dark"] .test-field-toggle,
+:root[data-theme="dark"] .course-instructor,
+:root[data-theme="dark"] .course-meta,
+:root[data-theme="dark"] .instructor-card>span,
+:root[data-theme="dark"] .instructor-card p,
+:root[data-theme="dark"] .detail-copy p,
+:root[data-theme="dark"] .detail-panel p,
+:root[data-theme="dark"] .instructions-main p,
+:root[data-theme="dark"] .instruction-aside p,
+:root[data-theme="dark"] .verify-card>p,
+:root[data-theme="dark"] .contact-copy>p,
+:root[data-theme="dark"] .legal-content p,
+:root[data-theme="dark"] .faq-list details p,
+:root[data-theme="dark"] .account-sidebar-profile small,
+:root[data-theme="dark"] .dashboard-topline p,
+:root[data-theme="dark"] .account-main p,
+:root[data-theme="dark"] .admin-page-title p,
+:root[data-theme="dark"] .admin-stat small,
+:root[data-theme="dark"] .admin-shortcut-grid small,
+:root[data-theme="dark"] .admin-table th,
+:root[data-theme="dark"] .admin-table-toolbar span,
+:root[data-theme="dark"] .testimonial-card p,
+:root[data-theme="dark"] .home-plan-mini small,
+:root[data-theme="dark"] .home-faq-list details p{color:#9aa9a8}
+:root[data-theme="dark"] .course-card-bottom,
+:root[data-theme="dark"] .test-card-bottom,
+:root[data-theme="dark"] .detail-tabs,
+:root[data-theme="dark"] .question-footer,
+:root[data-theme="dark"] .instruction-facts,
+:root[data-theme="dark"] .verify-result,
+:root[data-theme="dark"] .history-table td,
+:root[data-theme="dark"] .admin-table td,
+:root[data-theme="dark"] .history-table th,
+:root[data-theme="dark"] .admin-table th,
+:root[data-theme="dark"] .test-field-tests{border-color:#1b3038}
+:root[data-theme="dark"] .test-field-tests,
+:root[data-theme="dark"] .course-card-bottom,
+:root[data-theme="dark"] .test-card-bottom{color:#9aa9a8}
+:root[data-theme="dark"] .account-shell,
+:root[data-theme="dark"] .account-main,
+:root[data-theme="dark"] .learning-player-page,
+:root[data-theme="dark"] .quiz-page,
+:root[data-theme="dark"] .admin-app,
+:root[data-theme="dark"] .admin-content,
+:root[data-theme="dark"] .exam-page{background:#050a0f;color:#f3f7f5}
+:root[data-theme="dark"] .account-sidebar,
+:root[data-theme="dark"] .player-header,
+:root[data-theme="dark"] .curriculum-aside,
+:root[data-theme="dark"] .admin-sidebar,
+:root[data-theme="dark"] .admin-topbar{background:#0a1118;border-color:#1b3038;color:#f3f7f5}
+:root[data-theme="dark"] .account-sidebar nav a,
+:root[data-theme="dark"] .account-profile-menu a,
+:root[data-theme="dark"] .account-profile-menu button,
+:root[data-theme="dark"] .player-lesson-link,
+:root[data-theme="dark"] .lesson-tabs button,
+:root[data-theme="dark"] .learning-tabs button,
+:root[data-theme="dark"] .admin-sidebar nav button{color:#9aa9a8}
+:root[data-theme="dark"] .account-sidebar nav a:hover,
+:root[data-theme="dark"] .account-sidebar nav a.account-nav-active,
+:root[data-theme="dark"] .player-lesson-link:hover,
+:root[data-theme="dark"] .player-lesson-link.current,
+:root[data-theme="dark"] .admin-sidebar nav button:hover,
+:root[data-theme="dark"] .admin-sidebar nav button.admin-nav-active{
+  background:rgba(57,229,140,.1);
+  color:#63f5a7;
+}
+:root[data-theme="dark"] .account-sidebar nav a.account-nav-active:before,
+:root[data-theme="dark"] .admin-sidebar nav button.admin-nav-active:before{background:#39e58c}
+:root[data-theme="dark"] .sidebar-progress-card,
+:root[data-theme="dark"] .dashboard-empty,
+:root[data-theme="dark"] .side-target,
+:root[data-theme="dark"] .history-table th,
+:root[data-theme="dark"] .lesson-resources>div,
+:root[data-theme="dark"] .admin-date-select,
+:root[data-theme="dark"] .admin-table th,
+:root[data-theme="dark"] .admin-table-toolbar>label,
+:root[data-theme="dark"] .admin-modal-header,
+:root[data-theme="dark"] .exam-header,
+:root[data-theme="dark"] .exam-timer,
+:root[data-theme="dark"] .exam-brand{background:#081118;border-color:#1b3038;color:#9aa9a8}
+:root[data-theme="dark"] .admin-page-title h1,
+:root[data-theme="dark"] .admin-panel-heading h2,
+:root[data-theme="dark"] .admin-stat>div>strong,
+:root[data-theme="dark"] .admin-shortcut-grid strong,
+:root[data-theme="dark"] .admin-table td,
+:root[data-theme="dark"] .admin-activity-row>div>strong{color:#f3f7f5}
+:root[data-theme="dark"] .admin-page-title p,
+:root[data-theme="dark"] .admin-stat>div>span,
+:root[data-theme="dark"] .admin-stat>div>small,
+:root[data-theme="dark"] .admin-shortcut-grid small,
+:root[data-theme="dark"] .admin-table th,
+:root[data-theme="dark"] .admin-table-toolbar span{color:#9aa9a8}
+:root[data-theme="dark"] .admin-table tr:hover,
+:root[data-theme="dark"] .activity-row:hover{background:#111f29}
+:root[data-theme="dark"] .admin-profile-edit,
+:root[data-theme="dark"] .admin-panel-link,
+:root[data-theme="dark"] .admin-view-site{color:#63f5a7}
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] .filter-select select,
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .contact-form textarea,
+:root[data-theme="dark"] .auth-form input,
+:root[data-theme="dark"] .auth-form select,
+:root[data-theme="dark"] .verify-input,
+:root[data-theme="dark"] .profile-form-grid input,
+:root[data-theme="dark"] .profile-form-grid select,
+:root[data-theme="dark"] .admin-modal input,
+:root[data-theme="dark"] .admin-modal textarea,
+:root[data-theme="dark"] .admin-modal select,
+:root[data-theme="dark"] .admin-modal-form input,
+:root[data-theme="dark"] .admin-modal-form textarea,
+:root[data-theme="dark"] .admin-modal-form select,
+:root[data-theme="dark"] .home-search,
+:root[data-theme="dark"] .catalog-search,
+:root[data-theme="dark"] .admin-table-toolbar>label{
+  background-color:#081118;
+  border-color:#1b3038;
+  color:#f3f7f5;
+}
+:root[data-theme="dark"] input::placeholder,
+:root[data-theme="dark"] textarea::placeholder{color:#667775}
+:root[data-theme="dark"] select option{background:#0d1720;color:#f3f7f5}
+:root[data-theme="dark"] input:focus,
+:root[data-theme="dark"] textarea:focus,
+:root[data-theme="dark"] select:focus{
+  border-color:#39e58c;
+  box-shadow:0 0 0 3px rgba(57,229,140,.08);
+}
+:root[data-theme="dark"] .course-art{
+  background:radial-gradient(circle at 76% 23%,rgba(34,211,238,.18),transparent 32%),linear-gradient(145deg,#183b3b,#10242c 78%);
+}
+:root[data-theme="dark"] .art-blue{background:radial-gradient(circle at 76% 23%,rgba(34,211,238,.2),transparent 31%),linear-gradient(145deg,#184653,#10232c 78%)}
+:root[data-theme="dark"] .art-green{background:radial-gradient(circle at 76% 23%,rgba(57,229,140,.2),transparent 31%),linear-gradient(145deg,#174638,#102720 78%)}
+:root[data-theme="dark"] .art-violet{background:radial-gradient(circle at 76% 23%,rgba(34,211,238,.13),transparent 31%),linear-gradient(145deg,#34314e,#1b1a2b 78%)}
+:root[data-theme="dark"] .art-yellow{background:radial-gradient(circle at 76% 23%,rgba(242,153,74,.16),transparent 31%),linear-gradient(145deg,#4c3c26,#282217 78%)}
+:root[data-theme="dark"] .art-orange{background:radial-gradient(circle at 76% 23%,rgba(242,153,74,.18),transparent 31%),linear-gradient(145deg,#503327,#2b201c 78%)}
+:root[data-theme="dark"] .art-glyph{background:#0d1720;color:#63f5a7;box-shadow:0 12px 24px rgba(0,0,0,.35)}
+:root[data-theme="dark"] .art-orbit,
+:root[data-theme="dark"] .art-blue .art-orbit,
+:root[data-theme="dark"] .art-green .art-orbit,
+:root[data-theme="dark"] .art-violet .art-orbit{border-color:rgba(99,245,167,.3)}
+:root[data-theme="dark"] .progress,
+:root[data-theme="dark"] progress,
+:root[data-theme="dark"] [role="progressbar"]{accent-color:#39e58c}
+:root[data-theme="dark"] .progress-track,
+:root[data-theme="dark"] .progress-bar-track,
+:root[data-theme="dark"] .course-progress-track{background:#14242a}
+:root[data-theme="dark"] .progress-fill,
+:root[data-theme="dark"] .progress-bar-fill,
+:root[data-theme="dark"] .course-progress-fill{background:linear-gradient(90deg,#39e58c,#22d3ee);box-shadow:0 0 12px rgba(57,229,140,.16)}
+:root[data-theme="dark"] .contact-note,
+:root[data-theme="dark"] .pricing-note,
+:root[data-theme="dark"] .verify-result.not-verified{background:rgba(242,153,74,.1);border-color:rgba(242,153,74,.2);color:#f2b36f}
+:root[data-theme="dark"] .toast{background:rgba(57,229,140,.1);border-color:rgba(57,229,140,.2);color:#63f5a7}
+:root[data-theme="dark"] .test-field-heading small,
+:root[data-theme="dark"] .test-field-toggle{color:#9aa9a8}
+:root[data-theme="dark"] .answer-letter{background:#111f29;border-color:#1b3038;color:#9aa9a8}
+:root[data-theme="dark"] .exam-header-title strong,
+:root[data-theme="dark"] .exam-progress-line b,
+:root[data-theme="dark"] .question-card h1{color:#f3f7f5}
+:root[data-theme="dark"] .exam-progress-line,
+:root[data-theme="dark"] .question-footer>span,
+:root[data-theme="dark"] .question-legend span,
+:root[data-theme="dark"] .palette-summary,
+:root[data-theme="dark"] .question-palette button,
+:root[data-theme="dark"] .palette-footnote{color:#9aa9a8}
+:root[data-theme="dark"] .certificate-document{background:#0d1720;border-color:#1b3038;color:#f3f7f5}
+:root[data-theme="dark"] .certificate-home{background:linear-gradient(135deg,#0d1720,#10252b);border:1px solid #1b3038}
+:root[data-theme="dark"] .certificate-home-art{background:#f4f3e7;color:#45554a}
+:root[data-theme="dark"] .site-footer{
+  background:#0a1118!important;
+  border-top:1px solid #1b3038;
+  color:#9aa9a8!important;
+}
+:root[data-theme="dark"] .site-footer .brand,
+:root[data-theme="dark"] .site-footer .footer-brand p,
+:root[data-theme="dark"] .site-footer .footer-grid>div>a,
+:root[data-theme="dark"] .site-footer .footer-bottom,
+:root[data-theme="dark"] .site-footer .footer-bottom a,
+:root[data-theme="dark"] .site-footer .footer-bottom span{color:#9aa9a8!important}
+:root[data-theme="dark"] .site-footer .footer-grid h4{color:#63f5a7!important}
+:root[data-theme="dark"] .site-footer .footer-news{background:#0d1720!important;border-color:#1b3038}
+:root[data-theme="dark"] .site-footer .footer-news h3{color:#f3f7f5!important}
+:root[data-theme="dark"] .site-footer .footer-news p{color:#9aa9a8!important}
+:root[data-theme="dark"] .site-footer .footer-news .button-light{background:#111f29!important;color:#63f5a7!important}
+:root[data-theme="dark"] .site-footer .footer-bottom{border-color:#1b3038!important}
+:root[data-theme="dark"] .site-footer .brand-mark{background:#39e58c!important;box-shadow:0 0 18px rgba(57,229,140,.15)}
+@media(max-width:700px){
+  :root[data-theme="dark"] .main-nav,
+  :root[data-theme="dark"] .account-sidebar{background:#0a1118;border-color:#1b3038}
+}
+
+/* Refined warm-white surfaces, scoped to light mode so dark mode is unchanged. */
+:root:not([data-theme="dark"]){
+  color-scheme:light;
+  --ink:#17352b;
+  --muted:#5d6b65;
+  --orange:#f28c38;
+  --orange-dark:#e97d27;
+  --green:#27835a;
+  --navy:#173f34;
+  --line:#e3eae5;
+  --soft:#f8faf8;
+  --white:#fff;
+  --shadow:0 6px 24px rgba(23,53,43,.05);
+  color:#17352b;
+  background:#f8faf8;
+}
+:root:not([data-theme="dark"]) body{
+  background:#f8faf8;
+  color:#17352b;
+}
+:root:not([data-theme="dark"]) ::selection{background:#cfe3d6;color:#17352b}
+:root:not([data-theme="dark"]) button:focus-visible,
+:root:not([data-theme="dark"]) a:focus-visible,
+:root:not([data-theme="dark"]) input:focus-visible,
+:root:not([data-theme="dark"]) textarea:focus-visible,
+:root:not([data-theme="dark"]) select:focus-visible,
+:root:not([data-theme="dark"]) summary:focus-visible{outline-color:rgba(39,131,90,.55)}
+:root:not([data-theme="dark"]) .site-header{
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid #e5ebe7;
+  box-shadow:0 2px 12px rgba(23,53,43,.04);
+}
+:root:not([data-theme="dark"]) .brand{color:#17352b}
+:root:not([data-theme="dark"]) .brand>span:last-child>span,
+:root:not([data-theme="dark"]) .brand-small>span:last-child>span{color:#27835a}
+:root:not([data-theme="dark"]) .brand-mark{
+  background:#27835a;
+  box-shadow:0 5px 12px rgba(39,131,90,.16);
+}
+:root:not([data-theme="dark"]) .nav-link,
+:root:not([data-theme="dark"]) .header-login,
+:root:not([data-theme="dark"]) .header-dashboard{color:#4f6059}
+:root:not([data-theme="dark"]) .nav-link:hover,
+:root:not([data-theme="dark"]) .header-login:hover,
+:root:not([data-theme="dark"]) .header-dashboard:hover{color:#17352b}
+:root:not([data-theme="dark"]) .nav-active{
+  padding-inline:10px;
+  border-radius:10px;
+  background:#eaf4ed;
+  color:#27835a;
+}
+:root:not([data-theme="dark"]) .nav-active:after{display:none}
+:root:not([data-theme="dark"]) .header-admin-link{
+  background:#edf6f0;
+  border-color:#cfe3d6;
+  color:#27835a;
+}
+:root:not([data-theme="dark"]) .header-admin-link:hover{
+  background:#e8f4ec;
+  border-color:#b8d9c4;
+  color:#17352b;
+}
+:root:not([data-theme="dark"]) .nav-dropdown-menu,
+:root:not([data-theme="dark"]) .header-search-panel,
+:root:not([data-theme="dark"]) .profile-popover,
+:root:not([data-theme="dark"]) .search-suggestions,
+:root:not([data-theme="dark"]) .main-nav{
+  background:#fff;
+  border-color:#e3eae5;
+  color:#17352b;
+  box-shadow:0 20px 50px rgba(23,53,43,.12);
+}
+:root:not([data-theme="dark"]) .nav-dropdown-menu a,
+:root:not([data-theme="dark"]) .profile-popover>a,
+:root:not([data-theme="dark"]) .profile-popover>button,
+:root:not([data-theme="dark"]) .search-suggestions>a{color:#5d6b65}
+:root:not([data-theme="dark"]) .nav-dropdown-menu a:hover,
+:root:not([data-theme="dark"]) .profile-popover>a:hover,
+:root:not([data-theme="dark"]) .profile-popover>button:hover,
+:root:not([data-theme="dark"]) .search-suggestions>a:hover{background:#eaf4ed;color:#27835a}
+:root:not([data-theme="dark"]) .icon-button,
+:root:not([data-theme="dark"]) .theme-toggle{color:#718079}
+:root:not([data-theme="dark"]) .icon-button:hover,
+:root:not([data-theme="dark"]) .theme-toggle:hover{background:#eaf4ed;color:#27835a}
+:root:not([data-theme="dark"]) .theme-toggle-row{color:#5d6b65}
+:root:not([data-theme="dark"]) .theme-toggle-row .theme-toggle{background:#fff;border-color:#e3eae5}
+:root:not([data-theme="dark"]) .button-orange{
+  background:#f28c38;
+  color:#fff;
+  box-shadow:0 8px 24px rgba(242,140,56,.18);
+}
+:root:not([data-theme="dark"]) .button-orange:hover{
+  background:#e97d27;
+  box-shadow:0 10px 28px rgba(242,140,56,.24);
+}
+:root:not([data-theme="dark"]) .button-dark{background:#173f34;color:#fff}
+:root:not([data-theme="dark"]) .button-dark:hover{background:#215346}
+:root:not([data-theme="dark"]) .button-light{background:#fff;color:#17352b}
+:root:not([data-theme="dark"]) .button-light:hover{background:#f2f7f3;color:#27835a}
+:root:not([data-theme="dark"]) .button-outline{background:#fff;color:#17352b;border-color:#dce5e0}
+:root:not([data-theme="dark"]) .button-outline:hover{background:#f8faf8;border-color:#b8d9c4;color:#27835a}
+:root:not([data-theme="dark"]) .hero-section{
+  background:
+    radial-gradient(circle at 75% 35%,rgba(39,131,90,.07),transparent 35%),
+    #f5f8f4;
+  color:#17352b;
+}
+:root:not([data-theme="dark"]) .hero-grid-pattern{opacity:.1}
+:root:not([data-theme="dark"]) .hero-copy h1{color:#17352b}
+:root:not([data-theme="dark"]) .hero-copy h1 span{color:#27835a}
+:root:not([data-theme="dark"]) .hero-copy>p{color:#5d6b65}
+:root:not([data-theme="dark"]) .hero-kicker,
+:root:not([data-theme="dark"]) .hero-trust small{color:#5d6b65}
+:root:not([data-theme="dark"]) .hero-actions .hero-secondary{color:#34463f}
+:root:not([data-theme="dark"]) .hero-actions .hero-secondary:hover{background:#eaf4ed;color:#27835a}
+:root:not([data-theme="dark"]) .play-small{color:#27835a;border-color:#cfe3d6}
+:root:not([data-theme="dark"]) .avatar-stack span{border-color:#f5f8f4}
+:root:not([data-theme="dark"]) .hero-visual-bg{
+  background:radial-gradient(circle at 45% 42%,#fff 0,#f1f7ef 64%,#e8f4ec 100%);
+  border-color:#dcebe0;
+  box-shadow:inset 0 0 0 1px #dcebe0,0 12px 38px rgba(39,131,90,.08);
+}
+:root:not([data-theme="dark"]) .hero-visual-bg:before{border-color:#cfe3d6}
+:root:not([data-theme="dark"]) .hero-visual-bg:after{border-color:#d8e9dd}
+:root:not([data-theme="dark"]) .float-card{
+  background:#fff;
+  border-color:#e3eae5;
+  box-shadow:0 12px 34px rgba(23,53,43,.08);
+}
+:root:not([data-theme="dark"]) .float-card strong{color:#17352b}
+:root:not([data-theme="dark"]) .float-card small,
+:root:not([data-theme="dark"]) .hero-visual-caption{color:#7c8983}
+:root:not([data-theme="dark"]) .float-icon{background:#e8f4ec;color:#27835a}
+:root:not([data-theme="dark"]) .float-progress{color:#27835a}
+:root:not([data-theme="dark"]) .home-search-section,
+:root:not([data-theme="dark"]) .home-faq-section,
+:root:not([data-theme="dark"]) .pricing-section,
+:root:not([data-theme="dark"]) .faq-page,
+:root:not([data-theme="dark"]) .verify-section,
+:root:not([data-theme="dark"]) .contact-section,
+:root:not([data-theme="dark"]) .legal-section,
+:root:not([data-theme="dark"]) .catalog-section,
+:root:not([data-theme="dark"]) .test-list-section{background:#f8faf8}
+:root:not([data-theme="dark"]) .section-soft,
+:root:not([data-theme="dark"]) .page-intro{background:#f2f7f3}
+:root:not([data-theme="dark"]) .page-intro{border-color:#e3eae5}
+:root:not([data-theme="dark"]) .page-intro h1,
+:root:not([data-theme="dark"]) .section-heading h2,
+:root:not([data-theme="dark"]) .home-faq h2{color:#17352b}
+:root:not([data-theme="dark"]) .page-intro p,
+:root:not([data-theme="dark"]) .section-heading p{color:#5d6b65}
+:root:not([data-theme="dark"]) .eyebrow,
+:root:not([data-theme="dark"]) .catalog-result-line,
+:root:not([data-theme="dark"]) .search-hint{color:#7c8983}
+:root:not([data-theme="dark"]) .text-link{color:#27835a}
+:root:not([data-theme="dark"]) .text-link:hover{color:#173f34}
+:root:not([data-theme="dark"]) .home-search,
+:root:not([data-theme="dark"]) .catalog-search,
+:root:not([data-theme="dark"]) .filter-select,
+:root:not([data-theme="dark"]) .filter-chip,
+:root:not([data-theme="dark"]) .test-category-tabs button,
+:root:not([data-theme="dark"]) .answer-option,
+:root:not([data-theme="dark"]) .question-palette button{
+  background:#fff;
+  border-color:#e3eae5;
+  color:#5d6b65;
+}
+:root:not([data-theme="dark"]) .home-search,
+:root:not([data-theme="dark"]) .catalog-search{box-shadow:0 9px 30px rgba(23,53,43,.05)}
+:root:not([data-theme="dark"]) .home-search input,
+:root:not([data-theme="dark"]) .catalog-search input,
+:root:not([data-theme="dark"]) .filter-select select{color:#17352b}
+:root:not([data-theme="dark"]) .home-search input::placeholder,
+:root:not([data-theme="dark"]) .catalog-search input::placeholder{color:#89958f}
+:root:not([data-theme="dark"]) .filter-chip:hover,
+:root:not([data-theme="dark"]) .filter-chip.selected,
+:root:not([data-theme="dark"]) .test-category-tabs button.active,
+:root:not([data-theme="dark"]) .answer-option:hover,
+:root:not([data-theme="dark"]) .answer-option.answer-selected{
+  background:#e8f4ec;
+  border-color:#cfe3d6;
+  color:#27835a;
+}
+:root:not([data-theme="dark"]) .stat-strip{background:#fff;border-color:#e3eae5;color:#17352b}
+:root:not([data-theme="dark"]) .hero-stat strong{color:#17352b}
+:root:not([data-theme="dark"]) .hero-stat span,
+:root:not([data-theme="dark"]) .stat-strip-label{color:#5d6b65}
+:root:not([data-theme="dark"]) .category-tile,
+:root:not([data-theme="dark"]) .testimonial-card,
+:root:not([data-theme="dark"]) .home-plan-mini,
+:root:not([data-theme="dark"]) .home-instructor-strip article,
+:root:not([data-theme="dark"]) .course-card,
+:root:not([data-theme="dark"]) .test-card,
+:root:not([data-theme="dark"]) .test-field-card,
+:root:not([data-theme="dark"]) .instructor-card,
+:root:not([data-theme="dark"]) .pricing-card,
+:root:not([data-theme="dark"]) .verify-card,
+:root:not([data-theme="dark"]) .verify-result,
+:root:not([data-theme="dark"]) .contact-form-card,
+:root:not([data-theme="dark"]) .simple-form-card,
+:root:not([data-theme="dark"]) .checkout-modal,
+:root:not([data-theme="dark"]) .detail-panel,
+:root:not([data-theme="dark"]) .enroll-card,
+:root:not([data-theme="dark"]) .instructions-main,
+:root:not([data-theme="dark"]) .instruction-aside,
+:root:not([data-theme="dark"]) .question-card,
+:root:not([data-theme="dark"]) .question-navigator,
+:root:not([data-theme="dark"]) .result-chart-card,
+:root:not([data-theme="dark"]) .answer-review-card,
+:root:not([data-theme="dark"]) .faq-list,
+:root:not([data-theme="dark"]) .legal-content,
+:root:not([data-theme="dark"]) .review-form,
+:root:not([data-theme="dark"]) .empty-state,
+:root:not([data-theme="dark"]) .profile-form-card,
+:root:not([data-theme="dark"]) .dashboard-chart-card,
+:root:not([data-theme="dark"]) .dashboard-side-card,
+:root:not([data-theme="dark"]) .continue-card,
+:root:not([data-theme="dark"]) .history-table-wrap,
+:root:not([data-theme="dark"]) .notification-row,
+:root:not([data-theme="dark"]) .password-hint-card,
+:root:not([data-theme="dark"]) .certificate-eligibility,
+:root:not([data-theme="dark"]) .certificate-document,
+:root:not([data-theme="dark"]) .quiz-question,
+:root:not([data-theme="dark"]) .quiz-result-card,
+:root:not([data-theme="dark"]) .stat-card,
+:root:not([data-theme="dark"]) .admin-chart-panel,
+:root:not([data-theme="dark"]) .admin-activity-panel,
+:root:not([data-theme="dark"]) .admin-stat,
+:root:not([data-theme="dark"]) .admin-shortcut-grid>button,
+:root:not([data-theme="dark"]) .admin-table-wrap,
+:root:not([data-theme="dark"]) .question-bank-panel,
+:root:not([data-theme="dark"]) .review-admin-card,
+:root:not([data-theme="dark"]) .category-admin-grid>article,
+:root:not([data-theme="dark"]) .admin-test-card,
+:root:not([data-theme="dark"]) .curriculum-manager,
+:root:not([data-theme="dark"]) .curriculum-admin-module,
+:root:not([data-theme="dark"]) .curriculum-lesson-form form,
+:root:not([data-theme="dark"]) .admin-modal,
+:root:not([data-theme="dark"]) .admin-modal-form,
+:root:not([data-theme="dark"]) .admin-modal-content,
+:root:not([data-theme="dark"]) .mission-light,
+:root:not([data-theme="dark"]) .philosophy-grid>div{
+  background:#fff;
+  border-color:#e3eae5;
+  border-radius:14px;
+  color:#17352b;
+  box-shadow:0 6px 24px rgba(23,53,43,.05);
+}
+:root:not([data-theme="dark"]) .category-tile:hover,
+:root:not([data-theme="dark"]) .course-card:hover,
+:root:not([data-theme="dark"]) .test-card:hover,
+:root:not([data-theme="dark"]) .instructor-card:hover,
+:root:not([data-theme="dark"]) .home-plan-mini:hover,
+:root:not([data-theme="dark"]) .home-instructor-strip article:hover,
+:root:not([data-theme="dark"]) .admin-shortcut-grid>button:hover{
+  border-color:#b8d9c4;
+  box-shadow:0 10px 30px rgba(23,53,43,.09);
+  transform:translateY(-2px);
+}
+:root:not([data-theme="dark"]) .category-tile strong,
+:root:not([data-theme="dark"]) .section-heading h2,
+:root:not([data-theme="dark"]) .course-card-title,
+:root:not([data-theme="dark"]) .test-card h3,
+:root:not([data-theme="dark"]) .test-field-heading strong,
+:root:not([data-theme="dark"]) .instructor-card strong,
+:root:not([data-theme="dark"]) .detail-copy h1,
+:root:not([data-theme="dark"]) .detail-panel h2,
+:root:not([data-theme="dark"]) .instructions-main h1,
+:root:not([data-theme="dark"]) .question-card h1,
+:root:not([data-theme="dark"]) .question-nav-heading h3,
+:root:not([data-theme="dark"]) .verify-card h2,
+:root:not([data-theme="dark"]) .contact-form-card h2,
+:root:not([data-theme="dark"]) .simple-form-card h1,
+:root:not([data-theme="dark"]) .pricing-card h2,
+:root:not([data-theme="dark"]) .legal-content h2,
+:root:not([data-theme="dark"]) .faq-layout h2,
+:root:not([data-theme="dark"]) .account-page-header h1,
+:root:not([data-theme="dark"]) .dashboard-topline h1,
+:root:not([data-theme="dark"]) .dashboard-section-head h2,
+:root:not([data-theme="dark"]) .account-main h2,
+:root:not([data-theme="dark"]) .account-main h3,
+:root:not([data-theme="dark"]) .admin-page-title h1,
+:root:not([data-theme="dark"]) .admin-panel-heading h2,
+:root:not([data-theme="dark"]) .admin-stat strong,
+:root:not([data-theme="dark"]) .admin-shortcut-grid strong,
+:root:not([data-theme="dark"]) .admin-table td,
+:root:not([data-theme="dark"]) .question-bank-head h2,
+:root:not([data-theme="dark"]) .testimonial-card strong,
+:root:not([data-theme="dark"]) .home-plan-mini strong{color:#17352b}
+:root:not([data-theme="dark"]) .category-tile>span:last-child,
+:root:not([data-theme="dark"]) .section-heading p,
+:root:not([data-theme="dark"]) .course-card-body p,
+:root:not([data-theme="dark"]) .test-card p,
+:root:not([data-theme="dark"]) .test-field-heading small,
+:root:not([data-theme="dark"]) .test-field-toggle,
+:root:not([data-theme="dark"]) .course-instructor,
+:root:not([data-theme="dark"]) .course-meta,
+:root:not([data-theme="dark"]) .instructor-card>span,
+:root:not([data-theme="dark"]) .instructor-card p,
+:root:not([data-theme="dark"]) .detail-copy p,
+:root:not([data-theme="dark"]) .detail-panel p,
+:root:not([data-theme="dark"]) .instructions-main p,
+:root:not([data-theme="dark"]) .instruction-aside p,
+:root:not([data-theme="dark"]) .verify-card>p,
+:root:not([data-theme="dark"]) .contact-copy>p,
+:root:not([data-theme="dark"]) .legal-content p,
+:root:not([data-theme="dark"]) .faq-list details p,
+:root:not([data-theme="dark"]) .account-sidebar-profile small,
+:root:not([data-theme="dark"]) .dashboard-topline p,
+:root:not([data-theme="dark"]) .account-main p,
+:root:not([data-theme="dark"]) .admin-page-title p,
+:root:not([data-theme="dark"]) .admin-stat small,
+:root:not([data-theme="dark"]) .admin-shortcut-grid small,
+:root:not([data-theme="dark"]) .admin-table th,
+:root:not([data-theme="dark"]) .admin-table-toolbar span,
+:root:not([data-theme="dark"]) .testimonial-card p,
+:root:not([data-theme="dark"]) .home-plan-mini small{color:#5d6b65}
+:root:not([data-theme="dark"]) .course-card-bottom,
+:root:not([data-theme="dark"]) .test-card-bottom,
+:root:not([data-theme="dark"]) .detail-tabs,
+:root:not([data-theme="dark"]) .question-footer,
+:root:not([data-theme="dark"]) .instruction-facts,
+:root:not([data-theme="dark"]) .verify-result,
+:root:not([data-theme="dark"]) .history-table td,
+:root:not([data-theme="dark"]) .admin-table td,
+:root:not([data-theme="dark"]) .history-table th,
+:root:not([data-theme="dark"]) .admin-table th,
+:root:not([data-theme="dark"]) .test-field-tests{border-color:#e3eae5}
+:root:not([data-theme="dark"]) .course-level{
+  background:#e8f4ec;
+  border-color:#cfe3d6;
+  color:#27835a;
+}
+:root:not([data-theme="dark"]) .course-art{
+  background:radial-gradient(circle at 76% 23%,rgba(39,131,90,.12),transparent 31%),linear-gradient(145deg,#e8f4ec,#dcebe1 78%);
+}
+:root:not([data-theme="dark"]) .art-blue{background:radial-gradient(circle at 76% 23%,rgba(59,155,109,.12),transparent 31%),linear-gradient(145deg,#e4f0ee,#d9e9e6 78%)}
+:root:not([data-theme="dark"]) .art-green{background:radial-gradient(circle at 76% 23%,rgba(39,131,90,.14),transparent 31%),linear-gradient(145deg,#e6f3e9,#d7eadc 78%)}
+:root:not([data-theme="dark"]) .art-violet{background:radial-gradient(circle at 76% 23%,rgba(121,120,170,.12),transparent 31%),linear-gradient(145deg,#efedf6,#e3e1ef 78%)}
+:root:not([data-theme="dark"]) .art-yellow{background:radial-gradient(circle at 76% 23%,rgba(242,140,56,.12),transparent 31%),linear-gradient(145deg,#fbf2e1,#f2e7d0 78%)}
+:root:not([data-theme="dark"]) .art-orange{background:radial-gradient(circle at 76% 23%,rgba(242,140,56,.13),transparent 31%),linear-gradient(145deg,#faeee3,#f0dfd0 78%)}
+:root:not([data-theme="dark"]) .art-glyph{background:#fff;color:#27835a;box-shadow:0 12px 24px rgba(23,53,43,.12)}
+:root:not([data-theme="dark"]) .art-orbit,
+:root:not([data-theme="dark"]) .art-blue .art-orbit,
+:root:not([data-theme="dark"]) .art-green .art-orbit,
+:root:not([data-theme="dark"]) .art-violet .art-orbit{border-color:rgba(39,131,90,.28)}
+:root:not([data-theme="dark"]) .progress,
+:root:not([data-theme="dark"]) progress,
+:root:not([data-theme="dark"]) [role="progressbar"]{accent-color:#27835a}
+:root:not([data-theme="dark"]) .progress-track,
+:root:not([data-theme="dark"]) .progress-bar-track,
+:root:not([data-theme="dark"]) .course-progress-track{background:#e7efea}
+:root:not([data-theme="dark"]) .progress-fill,
+:root:not([data-theme="dark"]) .progress-bar-fill,
+:root:not([data-theme="dark"]) .course-progress-fill{background:linear-gradient(90deg,#27835a,#3b9b6d)}
+:root:not([data-theme="dark"]) .account-shell,
+:root:not([data-theme="dark"]) .account-main,
+:root:not([data-theme="dark"]) .learning-player-page,
+:root:not([data-theme="dark"]) .quiz-page,
+:root:not([data-theme="dark"]) .admin-app,
+:root:not([data-theme="dark"]) .admin-content,
+:root:not([data-theme="dark"]) .exam-page{background:#f8faf8;color:#17352b}
+:root:not([data-theme="dark"]) .account-sidebar,
+:root:not([data-theme="dark"]) .player-header,
+:root:not([data-theme="dark"]) .curriculum-aside,
+:root:not([data-theme="dark"]) .admin-sidebar,
+:root:not([data-theme="dark"]) .admin-topbar{background:#fff;border-color:#e3eae5;color:#17352b}
+:root:not([data-theme="dark"]) .account-sidebar nav a,
+:root:not([data-theme="dark"]) .account-profile-menu a,
+:root:not([data-theme="dark"]) .account-profile-menu button,
+:root:not([data-theme="dark"]) .player-lesson-link,
+:root:not([data-theme="dark"]) .lesson-tabs button,
+:root:not([data-theme="dark"]) .learning-tabs button,
+:root:not([data-theme="dark"]) .admin-sidebar nav button{color:#5d6b65}
+:root:not([data-theme="dark"]) .account-sidebar nav a:hover,
+:root:not([data-theme="dark"]) .account-sidebar nav a.account-nav-active,
+:root:not([data-theme="dark"]) .player-lesson-link:hover,
+:root:not([data-theme="dark"]) .player-lesson-link.current,
+:root:not([data-theme="dark"]) .admin-sidebar nav button:hover,
+:root:not([data-theme="dark"]) .admin-sidebar nav button.admin-nav-active{background:#e8f4ec;color:#27835a}
+:root:not([data-theme="dark"]) .account-sidebar nav a.account-nav-active:before,
+:root:not([data-theme="dark"]) .admin-sidebar nav button.admin-nav-active:before{background:#27835a}
+:root:not([data-theme="dark"]) .sidebar-progress-card,
+:root:not([data-theme="dark"]) .dashboard-empty,
+:root:not([data-theme="dark"]) .side-target,
+:root:not([data-theme="dark"]) .history-table th,
+:root:not([data-theme="dark"]) .lesson-resources>div,
+:root:not([data-theme="dark"]) .admin-date-select,
+:root:not([data-theme="dark"]) .admin-table th,
+:root:not([data-theme="dark"]) .admin-table-toolbar>label,
+:root:not([data-theme="dark"]) .admin-modal-header,
+:root:not([data-theme="dark"]) .exam-header,
+:root:not([data-theme="dark"]) .exam-timer,
+:root:not([data-theme="dark"]) .exam-brand{background:#f2f7f3;border-color:#e3eae5;color:#5d6b65}
+:root:not([data-theme="dark"]) .admin-page-title h1,
+:root:not([data-theme="dark"]) .admin-panel-heading h2,
+:root:not([data-theme="dark"]) .admin-stat>div>strong,
+:root:not([data-theme="dark"]) .admin-shortcut-grid strong,
+:root:not([data-theme="dark"]) .admin-table td,
+:root:not([data-theme="dark"]) .admin-activity-row>div>strong{color:#17352b}
+:root:not([data-theme="dark"]) .admin-page-title p,
+:root:not([data-theme="dark"]) .admin-stat>div>span,
+:root:not([data-theme="dark"]) .admin-stat>div>small,
+:root:not([data-theme="dark"]) .admin-shortcut-grid small,
+:root:not([data-theme="dark"]) .admin-table th,
+:root:not([data-theme="dark"]) .admin-table-toolbar span{color:#5d6b65}
+:root:not([data-theme="dark"]) .admin-table tr:hover,
+:root:not([data-theme="dark"]) .activity-row:hover{background:#f2f7f3}
+:root:not([data-theme="dark"]) .admin-profile-edit,
+:root:not([data-theme="dark"]) .admin-panel-link,
+:root:not([data-theme="dark"]) .admin-view-site{color:#27835a}
+:root:not([data-theme="dark"]) input,
+:root:not([data-theme="dark"]) textarea,
+:root:not([data-theme="dark"]) select,
+:root:not([data-theme="dark"]) .filter-select select,
+:root:not([data-theme="dark"]) .contact-form input,
+:root:not([data-theme="dark"]) .contact-form textarea,
+:root:not([data-theme="dark"]) .auth-form input,
+:root:not([data-theme="dark"]) .auth-form select,
+:root:not([data-theme="dark"]) .verify-input,
+:root:not([data-theme="dark"]) .profile-form-grid input,
+:root:not([data-theme="dark"]) .profile-form-grid select,
+:root:not([data-theme="dark"]) .admin-modal input,
+:root:not([data-theme="dark"]) .admin-modal textarea,
+:root:not([data-theme="dark"]) .admin-modal select,
+:root:not([data-theme="dark"]) .admin-modal-form input,
+:root:not([data-theme="dark"]) .admin-modal-form textarea,
+:root:not([data-theme="dark"]) .admin-modal-form select{
+  background-color:#fff;
+  border-color:#dce5e0;
+  color:#17352b;
+}
+:root:not([data-theme="dark"]) input::placeholder,
+:root:not([data-theme="dark"]) textarea::placeholder{color:#89958f}
+:root:not([data-theme="dark"]) input:focus,
+:root:not([data-theme="dark"]) textarea:focus,
+:root:not([data-theme="dark"]) select:focus{
+  border-color:#27835a;
+  box-shadow:0 0 0 3px rgba(39,131,90,.1);
+}
+:root:not([data-theme="dark"]) select option{background:#fff;color:#17352b}
+:root:not([data-theme="dark"]) .contact-note,
+:root:not([data-theme="dark"]) .pricing-note,
+:root:not([data-theme="dark"]) .verify-result.not-verified{
+  background:#fff1e5;
+  border-color:#f6d5b7;
+  color:#e97d27;
+}
+:root:not([data-theme="dark"]) .toast{background:#e8f4ec;border-color:#cfe3d6;color:#27835a}
+:root:not([data-theme="dark"]) .answer-letter{background:#f2f7f3;border-color:#e3eae5;color:#5d6b65}
+:root:not([data-theme="dark"]) .exam-header-title strong,
+:root:not([data-theme="dark"]) .exam-progress-line b,
+:root:not([data-theme="dark"]) .question-card h1{color:#17352b}
+:root:not([data-theme="dark"]) .exam-progress-line,
+:root:not([data-theme="dark"]) .question-footer>span,
+:root:not([data-theme="dark"]) .question-legend span,
+:root:not([data-theme="dark"]) .palette-summary,
+:root:not([data-theme="dark"]) .question-palette button,
+:root:not([data-theme="dark"]) .palette-footnote{color:#5d6b65}
+:root:not([data-theme="dark"]) .certificate-document{background:#fff;border-color:#e3eae5;color:#17352b}
+:root:not([data-theme="dark"]) .certificate-home{background:linear-gradient(135deg,#173f34,#215346);border:1px solid #cfe3d6}
+:root:not([data-theme="dark"]) .site-footer{
+  background:#173f34!important;
+  border-top:1px solid #d8e5dc;
+  color:#f2f7f3!important;
+}
+:root:not([data-theme="dark"]) .site-footer .brand,
+:root:not([data-theme="dark"]) .site-footer .footer-brand p,
+:root:not([data-theme="dark"]) .site-footer .footer-grid>div>a,
+:root:not([data-theme="dark"]) .site-footer .footer-bottom,
+:root:not([data-theme="dark"]) .site-footer .footer-bottom a,
+:root:not([data-theme="dark"]) .site-footer .footer-bottom span{color:#d3e2d8!important}
+:root:not([data-theme="dark"]) .site-footer .footer-grid h4{color:#a9d6bb!important}
+:root:not([data-theme="dark"]) .site-footer .footer-news{background:rgba(255,255,255,.06)!important;border-color:rgba(255,255,255,.16)}
+:root:not([data-theme="dark"]) .site-footer .footer-news h3{color:#fff!important}
+:root:not([data-theme="dark"]) .site-footer .footer-news p{color:#d3e2d8!important}
+:root:not([data-theme="dark"]) .site-footer .footer-news .button-light{background:#fff!important;color:#173f34!important}
+:root:not([data-theme="dark"]) .site-footer .footer-bottom{border-color:rgba(255,255,255,.18)!important}
+@media(max-width:700px){
+  :root:not([data-theme="dark"]) .main-nav,
+  :root:not([data-theme="dark"]) .account-sidebar{background:#fff;border-color:#e3eae5}
+}

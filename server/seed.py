@@ -965,7 +965,8 @@ def main():
             query("INSERT INTO reviews(user_id,course_id,rating,body,is_approved) SELECT u.id,'python-fundamentals',5,'Clear explanations and useful practice. I built confidence one lesson at a time.',true FROM users u WHERE u.email='student1@bharatlearn.in' ON CONFLICT(user_id,course_id) DO NOTHING",conn=conn)
         print(f"Seeded {len(CATEGORIES)} categories, {len(INSTRUCTORS)} instructors, {len(COURSES)} courses, {len(CATEGORIES) * 10} tests and {len(CATEGORIES) * 120} test questions.")
         print(f"Admin: {admin_email} (set SEED_ADMIN_PASSWORD before running seed to change it).")
-        print("Demo student: student1@bharatlearn.in / Student123!")
+        if os.getenv("SEED_DEMO_USERS", "true").strip().lower() in {"1", "true", "yes"}:
+            print("Demo student: student1@bharatlearn.in / Student123!")
     finally:
         pool.close()
 

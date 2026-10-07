@@ -107,6 +107,8 @@ select option{background:#f8f7f2;color:#303c35}
 .admin-sidebar,.admin-topbar,.admin-chart-panel,.admin-activity-panel,.admin-stat,.admin-shortcut-grid>button,.admin-table-wrap,.question-bank-panel,.review-admin-card,.category-admin-grid>article,.admin-test-card,.curriculum-manager,.curriculum-admin-module,.curriculum-lesson-form form{background:#f8f7f2;border-color:#dfdfd6;color:#354139}
 .admin-sidebar nav button{color:#58665d}
 .admin-sidebar nav button:hover,.admin-sidebar nav button.admin-nav-active{background:#e6efe6;color:#286b48}
+.admin-profile-edit{color:#5c7767}
+.admin-profile-shortcut{border-color:#dce3db;color:#617169}
 .admin-page-title h1,.admin-panel-heading h2,.admin-stat strong,.admin-shortcut-grid strong,.admin-table td,.question-bank-head h2{color:#2f3c34}
 .admin-page-title p,.admin-stat small,.admin-shortcut-grid small,.admin-table th,.admin-table-toolbar span{color:#6a776f}
 .admin-table th,.admin-table td,.admin-table-wrap{border-color:#e1e2d9}
@@ -449,6 +451,10 @@ select option{background:#f8f7f2;color:#303c35}
 :root[data-theme="dark"] .admin-date-select,
 :root[data-theme="dark"] .admin-table th{background:#3a423d;border-color:#4b554e;color:#c4cec5}
 :root[data-theme="dark"] .admin-sidebar nav button{color:#c0cbc1}
+:root[data-theme="dark"] .admin-profile-edit{color:#b8d7be}
+:root[data-theme="dark"] .admin-profile-edit:hover{color:#d1e8d4}
+:root[data-theme="dark"] .admin-profile-shortcut{border-color:#4a554d;color:#c0cec2}
+:root[data-theme="dark"] .admin-profile-shortcut:hover{background:#414b44;color:#d5e8d7}
 :root[data-theme="dark"] .admin-sidebar nav button:hover,
 :root[data-theme="dark"] .admin-sidebar nav button.admin-nav-active,
 :root[data-theme="dark"] .admin-table tr:hover,

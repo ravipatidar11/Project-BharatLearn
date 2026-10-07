@@ -22,16 +22,26 @@ from .security import password_hash, password_matches, require_admin, require_us
 
 app = FastAPI(title="BharatLearn API", version="1.0.0")
 logger = logging.getLogger("bharatlearn.api")
-_default_origins = [
+_local_origins = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:5174",
 ]
-configured_origins = [origin.strip() for origin in os.getenv("CLIENT_ORIGIN", ",".join(_default_origins)).split(",") if origin.strip()]
+_deployed_origins = ["https://project-bharat-learn.vercel.app"]
+configured_origins = [
+    origin.strip().rstrip("/")
+    for origin in os.getenv("CLIENT_ORIGIN", "").split(",")
+    if origin.strip()
+]
+allowed_origins = list(dict.fromkeys(
+    [*configured_origins, *_deployed_origins]
+    if configured_origins
+    else [*_local_origins, *_deployed_origins]
+))
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=configured_origins or _default_origins,
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["Authorization", "Content-Type"],

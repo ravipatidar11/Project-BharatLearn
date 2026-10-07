@@ -6,7 +6,7 @@ import re
 import sys
 from pathlib import Path
 
-from app.db import ROOT, pool, query, transaction
+from app.db import ROOT, pool, query, query_many, transaction
 from app.security import password_hash
 
 
@@ -888,8 +888,10 @@ STUDENTS = [
 def main():
     if not os.getenv("DATABASE_URL"):
         raise RuntimeError("DATABASE_URL is required. Set it in bharatlearn/.env.")
+    print("Connecting to PostgreSQL...", flush=True)
     pool.open(wait=True)
     try:
+        print("Connected. Applying schema and seeding catalog...", flush=True)
         query("CREATE EXTENSION IF NOT EXISTS pgcrypto")
         schema=(ROOT/"server"/"src"/"db"/"schema.sql").read_text(encoding="utf-8")
         for statement in schema.split(";"):
@@ -907,8 +909,9 @@ def main():
             admin_email=os.getenv("SEED_ADMIN_EMAIL","admin@bharatlearn.in")
             admin_hash=password_hash(os.getenv("SEED_ADMIN_PASSWORD","ChangeMe123!"))
             query("INSERT INTO users(full_name,email,password_hash,city,role) VALUES($1,$2,$3,$4,$5) ON CONFLICT(email) DO UPDATE SET role=EXCLUDED.role,password_hash=EXCLUDED.password_hash,full_name=EXCLUDED.full_name",["BharatLearn Admin",admin_email,admin_hash,"Hyderabad","admin"],conn)
-            for course in COURSES:
+            for course_index, course in enumerate(COURSES, start=1):
                 course_id,title,subtitle,cat_slug,level,hours,price,original,instructor_index,featured=course
+                print(f"Seeding course {course_index}/{len(COURSES)}: {title}", flush=True)
                 category=rows_one("SELECT id FROM categories WHERE slug=$1",[cat_slug],conn)
                 query("""INSERT INTO courses(id,title,subtitle,description,category_id,instructor_id,level,duration_hours,price_inr,original_price_inr,thumbnail_url,featured)
                   VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12) ON CONFLICT(id) DO UPDATE SET title=EXCLUDED.title,subtitle=EXCLUDED.subtitle,description=EXCLUDED.description,category_id=EXCLUDED.category_id,instructor_id=EXCLUDED.instructor_id,level=EXCLUDED.level,duration_hours=EXCLUDED.duration_hours,price_inr=EXCLUDED.price_inr,original_price_inr=EXCLUDED.original_price_inr,featured=EXCLUDED.featured""",
@@ -927,6 +930,8 @@ def main():
             query("UPDATE tests SET is_published=false WHERE category = ANY($1)", [category_names], conn)
             query("UPDATE test_questions SET is_active=false WHERE test_id IN (SELECT id FROM tests WHERE category = ANY($1))", [category_names], conn)
 
+            print("Preparing practice tests and batching questions by field...", flush=True)
+            question_rows_by_category = {name: [] for name, _, _ in CATEGORIES}
             for test_index, (test_id, title, category, description) in enumerate(build_field_test_catalog(), start=0):
                 query("""INSERT INTO tests(id,title,description,category,duration_minutes,total_marks,passing_percent,correct_marks,wrong_marks,max_attempts,question_count,leaderboard_enabled)
                   VALUES($1,$2,$3,$4,20,12,40,1,0.25,$5,12,true) ON CONFLICT(id) DO UPDATE SET title=EXCLUDED.title,description=EXCLUDED.description,category=EXCLUDED.category,max_attempts=EXCLUDED.max_attempts,question_count=EXCLUDED.question_count,is_published=true""", [test_id, title, description, category, MAX_ATTEMPTS], conn)
@@ -935,12 +940,18 @@ def main():
                     seed_key = f"programming-v2-{test_id}-{q_index:02d}-{slugify(topic)}"
                     options = [answer, *distractors]
                     correct_index = options.index(answer)
-                    query("""INSERT INTO test_questions(test_id,topic,prompt,options,correct_index,explanation,position,is_active,seed_key)
-                      VALUES($1,$2,$3,$4,$5,$6,$7,true,$8)
-                      ON CONFLICT (test_id,seed_key) WHERE seed_key IS NOT NULL
-                      DO UPDATE SET topic=EXCLUDED.topic,prompt=EXCLUDED.prompt,options=EXCLUDED.options,correct_index=EXCLUDED.correct_index,
-                        explanation=EXCLUDED.explanation,position=EXCLUDED.position,is_active=true""",
-                      [test_id, topic, prompt, json.dumps(options), correct_index, explanation, q_index, seed_key], conn)
+                    question_rows_by_category[category].append(
+                        (test_id, topic, prompt, json.dumps(options), correct_index, explanation, q_index, seed_key)
+                    )
+
+            question_sql = """INSERT INTO test_questions(test_id,topic,prompt,options,correct_index,explanation,position,is_active,seed_key)
+              VALUES($1,$2,$3,$4,$5,$6,$7,true,$8)
+              ON CONFLICT (test_id,seed_key) WHERE seed_key IS NOT NULL
+              DO UPDATE SET topic=EXCLUDED.topic,prompt=EXCLUDED.prompt,options=EXCLUDED.options,correct_index=EXCLUDED.correct_index,
+                explanation=EXCLUDED.explanation,position=EXCLUDED.position,is_active=true"""
+            for category_name, _, _ in CATEGORIES:
+                query_many(question_sql, question_rows_by_category[category_name], conn)
+                print(f"Seeded programming tests for {category_name}.", flush=True)
 
             for category_name, _, _ in CATEGORIES:
                 count = rows_one("SELECT COUNT(*)::int AS total FROM tests WHERE category = $1 AND is_published=true", [category_name], conn)["total"]

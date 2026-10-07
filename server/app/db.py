@@ -44,6 +44,15 @@ def query(sql: str, params: tuple[Any, ...] | list[Any] = (), conn=None) -> list
         return list(cursor.fetchall()) if cursor.description else []
 
 
+def query_many(sql: str, params_rows: list[tuple[Any, ...]], conn) -> None:
+    if not params_rows:
+        return
+    statement, _ = _prepare(sql, params_rows[0])
+    values = [_prepare(sql, params)[1] for params in params_rows]
+    with conn.cursor() as cursor:
+        cursor.executemany(statement, values)
+
+
 @contextmanager
 def transaction() -> Iterator[Any]:
     with pool.connection() as conn:

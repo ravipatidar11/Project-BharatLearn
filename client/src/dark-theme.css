@@ -198,6 +198,7 @@ select option{background:#f8f7f2;color:#303c35}
 :root[data-theme="dark"] .nav-active,
 :root[data-theme="dark"] .header-login:hover,
 :root[data-theme="dark"] .header-dashboard:hover{color:#a9d0b0}
+:root[data-theme="dark"] .nav-active{background:#3b473f}
 :root[data-theme="dark"] .nav-dropdown-menu,
 :root[data-theme="dark"] .header-search-panel,
 :root[data-theme="dark"] .profile-popover,

@@ -64,12 +64,12 @@ npm run dev:server
 npm run dev:client
 ```
 
-## PostgreSQL and Supabase setup
+## PostgreSQL setup
 
-1. Create a PostgreSQL database or a Supabase project.
-2. In Supabase, open **Connect** and copy the database connection string. Use the direct connection where supported, or the session pooler for an IPv4-only environment.
-3. Put the string in `DATABASE_URL` in `.env`, replacing the password placeholder. Keep the database password private.
-4. Run `npm run seed`. The script creates the schema and inserts the demo content. It is safe to re-run for the included seed records; do not use it as a production migration tool.
+1. Create a PostgreSQL database (Neon or Supabase both work).
+2. Copy its PostgreSQL connection string. For Neon, use the pooled connection string and keep `sslmode=require` in the query parameters.
+3. Put the string in `DATABASE_URL` in `.env`, replacing any password placeholder. Keep the database password private.
+4. Run `npm run seed`. The script creates the schema and inserts demo content. It is safe to re-run for the included seed records; do not use it as a production migration tool.
 
 This API connects to PostgreSQL directly with the server-side database credential. `SUPABASE_URL` and `SUPABASE_ANON_KEY` are optional reference values; this implementation does not expose or use the service-role key.
 
@@ -85,6 +85,7 @@ This API connects to PostgreSQL directly with the server-side database credentia
 | `VITE_API_URL` | Client | API origin without `/api`; defaults to `http://localhost:4000` |
 | `SEED_ADMIN_EMAIL` | Seed | Development admin email |
 | `SEED_ADMIN_PASSWORD` | Seed | Development admin password |
+| `SEED_DEMO_USERS` | Seed | Set to `false` to skip predictable demo student accounts; defaults to `true` locally |
 | `SUPABASE_URL` | Optional | Supabase project URL for future integrations |
 | `SUPABASE_ANON_KEY` | Optional | Public Supabase key; not needed for this API |
 
@@ -92,12 +93,12 @@ Never commit `.env` or use a database service-role key in the browser.
 
 ## Seed accounts and content
 
-The seed creates 18 categories, 10 instructors, 10 Indian student accounts, 20 courses with lessons and module quizzes, 10 independent practice tests with 120 questions, sample enrollments, one approved review, and notifications.
+The seed creates 18 categories, 10 instructors, 20 courses with lessons and module quizzes, 10 independent practice tests with 120 questions, sample enrollments, one approved review, and notifications. With the default local setting `SEED_DEMO_USERS=true`, it also creates 10 demo student accounts. Keep this disabled on public deployments.
 
-- **Student:** `student1@bharatlearn.in` / `Student123!`
-- **Admin:** `admin@bharatlearn.in` / `ChangeMe123!`
+- **Local demo student (when enabled):** `student1@bharatlearn.in` / `Student123!`
+- **Local demo admin defaults:** `admin@bharatlearn.in` / `ChangeMe123!`
 
-Set `SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD` in `.env` before running the seed to use your own development admin credentials. Re-run the seed after changing them. Change or remove demo passwords before sharing a public deployment.
+Set `SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD` before running the seed to use your own admin credentials. The checked-in `.env.example` values are for local development only; never use them on a public deployment. Use a new database for the first public seed, because disabling demo users does not remove demo accounts that already exist.
 
 ## Main student flows
 
@@ -143,19 +144,29 @@ No automated test suite is included in this first build. To check the connected 
 
 Create your own repository, add the `bharatlearn` directory, and push it to your account. Keep `.env` out of version control. If the workspace is a monorepo, deploy from the `bharatlearn/client` and `bharatlearn/server` app directories independently.
 
+### Neon PostgreSQL database
+
+1. Create a Neon project and database, then copy the pooled connection string from the Neon dashboard.
+2. Keep the full connection string private. It will be entered as `DATABASE_URL` in the Render service, not in Vercel or the browser.
+3. The API connects with psycopg over TLS; the Neon connection string should include `sslmode=require`.
+
 ### Vercel frontend
 
 1. Import your repository as a Vercel project.
-2. Set the project **Root Directory** to `bharatlearn/client`.
+2. Set the project **Root Directory** to `client`.
 3. Use `npm run build` as the build command and `dist` as the output directory.
-4. Set `VITE_API_URL` to the deployed API origin (no trailing `/api`). The included `vercel.json` sends client-side routes back to the SPA entry.
-5. Set the backend `CLIENT_ORIGIN` to the deployed frontend origin.
+4. After the API is deployed, add `VITE_API_URL` with the Render service origin only, for example `https://bharatlearn-api.onrender.com` (no trailing `/api`), then redeploy the Vercel frontend.
+5. The included `client/vercel.json` sends client-side routes back to the SPA entry.
 
 ### Python backend
 
-For a Render web service, set the repository root directory to `bharatlearn/server`, the build command to `pip install -r requirements.txt`, and the start command to `uvicorn app.main:app --host 0.0.0.0 --port $PORT`. Set `DATABASE_URL`, `JWT_SECRET`, `CLIENT_ORIGIN`, `SEED_ADMIN_EMAIL`, and `SEED_ADMIN_PASSWORD` in the service environment. Use `/api/health` as the health-check path. Run `python seed.py` once from the server directory with the same database settings before opening the app.
+1. In Render, create a Blueprint from this repository and apply the root `render.yaml`. It defines the Python web service, health check and required environment variables.
+2. Set the prompted `DATABASE_URL` to the Neon pooled connection string, `CLIENT_ORIGIN` to the exact Vercel production origin (for example `https://bharatlearn.vercel.app`), and `SEED_ADMIN_EMAIL`/`SEED_ADMIN_PASSWORD` to credentials you control. Render generates `JWT_SECRET`.
+3. Once the Render service is live, copy its `https://...onrender.com` origin into Vercel's `VITE_API_URL` and redeploy the frontend.
+4. Run the one-time initial seed from the Render service Shell with `python seed.py`. The Blueprint disables predictable demo student accounts; the seed still creates an admin using the configured seed-admin credentials. Seed only a new database, and do not use this script as a production migration tool.
+5. Confirm the backend responds at `https://<your-render-service>.onrender.com/api/health`, then open the Vercel site and test registration/login and the catalog.
 
-Free web services are useful for demos and may sleep or have resource limits. Review current host limitations before relying on a free instance for real learners.
+The included Render Blueprint uses the free plan, which may sleep or have resource limits. Review current host limitations before relying on a free instance for real learners.
 
 ## Production checklist
 
@@ -181,6 +192,7 @@ Free web services are useful for demos and may sleep or have resource limits. Re
 ## Deployment references
 
 - [Vercel monorepo deployments](https://vercel.com/docs/monorepos)
+- [Neon connection strings](https://neon.tech/docs/connect/connect-from-any-app)
 - [Supabase PostgreSQL connection options](https://supabase.com/docs/guides/database/connecting-to-postgres)
 - [Render FastAPI deployment guide](https://render.com/docs/deploy-fastapi)
 - [Render free service limitations](https://render.com/docs/free)

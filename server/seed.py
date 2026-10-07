@@ -900,9 +900,10 @@ def main():
                 query("INSERT INTO categories(name,slug,icon) VALUES($1,$2,$3) ON CONFLICT(slug) DO UPDATE SET name=EXCLUDED.name,icon=EXCLUDED.icon",[name,slug,icon],conn)
             for index,(name,title,city,bio) in enumerate(INSTRUCTORS,1):
                 query("INSERT INTO instructors(id,full_name,title,city,bio,rating) VALUES($1,$2,$3,$4,$5,4.8) ON CONFLICT(id) DO UPDATE SET full_name=EXCLUDED.full_name,title=EXCLUDED.title,city=EXCLUDED.city,bio=EXCLUDED.bio",[index,name,title,city,bio],conn)
-            student_hash=password_hash("Student123!")
-            for index,(name,city,college) in enumerate(STUDENTS):
-                query("INSERT INTO users(full_name,email,phone,password_hash,city,college,education) VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT(email) DO NOTHING",[name,f"student{index+1}@bharatlearn.in",f"+91 90000 1000{index}",student_hash,city,college,"Undergraduate"],conn)
+            if os.getenv("SEED_DEMO_USERS", "true").strip().lower() in {"1", "true", "yes"}:
+                student_hash=password_hash("Student123!")
+                for index,(name,city,college) in enumerate(STUDENTS):
+                    query("INSERT INTO users(full_name,email,phone,password_hash,city,college,education) VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT(email) DO NOTHING",[name,f"student{index+1}@bharatlearn.in",f"+91 90000 1000{index}",student_hash,city,college,"Undergraduate"],conn)
             admin_email=os.getenv("SEED_ADMIN_EMAIL","admin@bharatlearn.in")
             admin_hash=password_hash(os.getenv("SEED_ADMIN_PASSWORD","ChangeMe123!"))
             query("INSERT INTO users(full_name,email,password_hash,city,role) VALUES($1,$2,$3,$4,$5) ON CONFLICT(email) DO UPDATE SET role=EXCLUDED.role,password_hash=EXCLUDED.password_hash,full_name=EXCLUDED.full_name",["BharatLearn Admin",admin_email,admin_hash,"Hyderabad","admin"],conn)
